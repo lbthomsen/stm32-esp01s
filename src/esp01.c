@@ -33,10 +33,11 @@ esp01_result_t esp01_init(esp01_handler_t *esp01, UART_HandleTypeDef *uart) {
         printf("HAL Transmit Error\n");
         return ESP01_Error;
     }
-    //HAL_Delay(100);
 
-//    sprintf(txbuf, "AT+GMR\r\n");
-//    HAL_UART_Transmit(esp01->uart, (uint8_t *)&txbuf, strlen(txbuf), 100);
+    HAL_Delay(100);
+
+    sprintf(txbuf, "AT+GMR\r\n");
+    HAL_UART_Transmit(esp01->uart, (uint8_t *)&txbuf, strlen(txbuf), 100);
 
     return res;
 }
