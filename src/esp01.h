@@ -28,6 +28,7 @@ typedef enum {
 } esp01_result_t;
 
 esp01_result_t esp01_init(esp01_handler_t *esp01, UART_HandleTypeDef *uart);
+esp01_result_t esp01_reset(esp01_handler_t *esp01);
 
 void esp01_receive(char ch);
 
