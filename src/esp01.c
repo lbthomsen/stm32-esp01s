@@ -42,7 +42,22 @@ esp01_result_t esp01_process_response(esp01_handler_t *esp01, char *str) {
     strncpy(last_str, str, MAX_STR - 1);
 
     if (strstr(last_str, "+CIPSNTPTIME:") != 0) {
-        printf("Got a time: %s\n", &last_str[13]);
+        //printf("Got a time: %s\n", &last_str[13]);
+        printf("%s\n", last_str);
+
+        int tokens;
+        char command[14]; strncpy(&command, &last_str[0], 13);
+        char day[4]; strncpy(&day, &last_str[13], 3);
+        char month[4]; strncpy(&month, &last_str[17], 3);
+        int date;
+        int hour;
+        int minute;
+        int second;
+        int year;
+
+        //tokens = sscanf(last_str, "%s:%s %s %d %d:%d:%d %d", command, day, month, &date, &hour, &minute, &second, &year);
+        printf("tok=%d, day=%s m=%s date=%d hour=%d min=%d sec=%d year=%d\n", tokens, day, month, date, hour, minute, second, year);
+
     } else if (strstr(last_str, "WIFI DISCONNECT") != 0) {
         printf("Wifi disconnected\n");
     } else if (strstr(last_str, "WIFI CONNECTED") != 0) {
