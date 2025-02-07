@@ -1,4 +1,9 @@
 ../esp01/esp01.c:30:16:wait_for_string	3
-../esp01/esp01.c:40:16:esp01_reset	3
-../esp01/esp01.c:55:16:esp01_init	4
-../esp01/esp01.c:77:6:esp01_receive	3
+../esp01/esp01.c:39:16:esp01_process_response	5
+../esp01/esp01.c:61:16:esp01_reset	3
+../esp01/esp01.c:77:16:esp01_set_wifi_mode	3
+../esp01/esp01.c:95:16:esp01_wifi_connect	3
+../esp01/esp01.c:113:16:esp01_set_ntp	3
+../esp01/esp01.c:131:16:esp01_get_ntp_time	3
+../esp01/esp01.c:149:16:esp01_init	4
+../esp01/esp01.c:175:6:esp01_receive	3
